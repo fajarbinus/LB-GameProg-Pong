@@ -2130,7 +2130,10 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
-  m_Layer: 0
+  - component: {fileID: 519420033}
+  - component: {fileID: 519420030}
+  - component: {fileID: 519420034}
+  m_Layer: 6
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -2145,6 +2148,23 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
+--- !u!114 &519420030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sharedProfile: {fileID: 11400000, guid: a22ef237fbed0ca4285dda5ec741d975, type: 2}
+  isGlobal: 1
+  blendDistance: 0
+  weight: 1
+  priority: 0
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -2172,12 +2192,12 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 5.64
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_RenderingPath: -1
+  m_RenderingPath: 3
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 0
@@ -2202,6 +2222,85 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &519420033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeTrigger: {fileID: 519420032}
+  volumeLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  stopNaNPropagation: 1
+  finalBlitToCameraTarget: 0
+  antialiasingMode: 0
+  temporalAntialiasing:
+    jitterSpread: 0.75
+    sharpness: 0.25
+    stationaryBlending: 0.95
+    motionBlending: 0.85
+  subpixelMorphologicalAntialiasing:
+    quality: 2
+  fastApproximateAntialiasing:
+    fastMode: 0
+    keepAlpha: 0
+  fog:
+    enabled: 1
+    excludeSkybox: 1
+  debugLayer:
+    lightMeter:
+      width: 512
+      height: 256
+      showCurves: 1
+    histogram:
+      width: 512
+      height: 256
+      channel: 3
+    waveform:
+      exposure: 0.12
+      height: 256
+    vectorscope:
+      size: 256
+      exposure: 0.12
+    overlaySettings:
+      linearDepth: 0
+      motionColorIntensity: 4
+      motionGridSize: 64
+      colorBlindnessType: 0
+      colorBlindnessStrength: 1
+  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
+  m_ShowToolkit: 0
+  m_ShowCustomSorter: 0
+  breakBeforeColorGrading: 0
+  m_BeforeTransparentBundles: []
+  m_BeforeStackBundles: []
+  m_AfterStackBundles: []
+--- !u!95 &519420034
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 011d0e53ee26a9949b5b226aaa6520b8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &534615741
 GameObject:
   m_ObjectHideFlags: 0
@@ -3750,7 +3849,8 @@ GameObject:
   - component: {fileID: 1020786163}
   - component: {fileID: 1020786164}
   - component: {fileID: 1020786162}
-  m_Layer: 0
+  - component: {fileID: 1020786165}
+  m_Layer: 3
   m_Name: King
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3879,6 +3979,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1020786165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1020786159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64122d8ec109d72408fd45a78d5a232d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ball: {fileID: 1917719948}
+  enemy: {fileID: 1020786161}
+  speed: 5
 --- !u!1 &1071573155
 GameObject:
   m_ObjectHideFlags: 0
@@ -5395,7 +5510,8 @@ GameObject:
   - component: {fileID: 1412513892}
   - component: {fileID: 1412513891}
   - component: {fileID: 1412513889}
-  m_Layer: 0
+  - component: {fileID: 1412513890}
+  m_Layer: 3
   m_Name: Pig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5485,6 +5601,22 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.1
+--- !u!58 &1412513890
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1412513886}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.1
 --- !u!50 &1412513891
 Rigidbody2D:
   serializedVersion: 4
@@ -5520,7 +5652,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ball: {fileID: 1917719948}
   enemy: {fileID: 1412513888}
-  speed: 1
+  speed: 5
 --- !u!1 &1414541822
 GameObject:
   m_ObjectHideFlags: 0
@@ -5992,7 +6124,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1502173254}
   - component: {fileID: 1502173255}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cloud
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6442,7 +6574,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1591097788}
   - component: {fileID: 1591097789}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cloud
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7540,10 +7672,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreKing: 0
   scorePig: 0
+  winScore: 1000
   uIScoreKing: {fileID: 1823804245}
   uIScorePig: {fileID: 1380220348}
   uIWinTextCont: {fileID: 355954505}
   uIWinLose: {fileID: 1877851481}
+  camAnimator: {fileID: 519420034}
   sceneManagement: {fileID: 1881085243}
 --- !u!1 &1917719946
 GameObject:
@@ -7558,6 +7692,7 @@ GameObject:
   - component: {fileID: 1917719950}
   - component: {fileID: 1917719949}
   - component: {fileID: 1917719951}
+  - component: {fileID: 1917719952}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Untagged
@@ -7680,6 +7815,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 509c60d671afea641b8b6e3cd23f2e0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  wallCollisionCount: 0
+--- !u!58 &1917719952
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1917719946}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.005325355, y: -0.0033583273}
+  serializedVersion: 2
+  m_Radius: 0.07500001
 --- !u!1 &1920747243
 GameObject:
   m_ObjectHideFlags: 0
